@@ -6,11 +6,11 @@ Time Trader is a tokenized platform where users are able to trade their time and
 
 Users will be able to create a profile and advertise their areas of expertise, interests, references, profile photos, location(optional) and bio. Areas of expertise will be able to have 3 states, "verified", "un-verified", and "verification removed". References will need to be submitted from other users in the community. Interests can have a status of "looking for help" or "no help needed".
 
-### User Interactions
-
 #### "Tokenomics"
 
 By interacting through video or audio call the assisting user acquires tokens based on the amount of time on spent on the call. Tokens are traded between users at a rate of 1 token for every minute the call is connected. Once a user completes their registration they will receive 15 complementary tokens which represents the amount of time someone would likely need for a smaller task or question.
+
+### User Interactions
 
 #### Verification
 
@@ -24,19 +24,22 @@ Once a user changes an interests status to looking for help their profile will b
 
 ````
 user_1: {
+    name: "Bill"
     areaOfExpertise: [{field: MECHANIC, status: VERIFIED, endorsementRatio: 0.8}],
     interests: [{field: CARPENTRY, status: HELP}]
 }
-user_3: {
+user_2: {
+    name: "Jill"
     areaOfExpertise: [{field: CARPENTRY, status: VERIFIED, endorsementRatio: 0.99}],
     interests: [{field: TAX, status: HELP}]
 }
 user_3: {
+    name: "Phil"
     areaOfExpertise: [{field: TAX, status: VERIFIED, endorsementRatio: 0.86}],
     interests: [{field: MECHANIC, status: HELP}]
 }
 ```
-
+Bill is a well established mechanic from his profession but he has decided to take on some very small carpentry projects around his home. After contacting Jill and receiving assistance, Jill will receive the tokens from Bill for the time spent. Although Bill's question did not take much time he used the last of his remaining tokens. However, this represented Jill's 3rd time helping other users in the community which has allowed her to collect enough tokens to have enough time with the complicated tax problems she would like to talk to Phil about. No longer able to ask for help from others due to lack of tokens Bill finds Phil is in need of mechanic help by which Bill gains back some tokens.
 
 
 # Getting Started with Create React App
