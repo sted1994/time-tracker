@@ -1,3 +1,21 @@
+# Summary
+
+Time Trader is a tokenized platform where users are able to trade their time and expertise. By assisting other users you can gain tokens which you can then trade for the time of other users. The purpose of this application is to give users who would like to do something on their own(DIY) the ability to connect with subject matter experts by giving back and helping others.
+
+### User Profiles
+
+Users will be able to create a profile and advertise their areas of expertise, interests, references, profile photos, and bio. Areas of expertise will be able to have 3 states, verified, un-verified, and verification removed. References will need to be from other users in the community.
+
+### User Interactions
+
+By interacting through video or audio call the assisting user acquires tokens based on the amount of time on spent on the call. After receiving assistance a user is then able to endorse the assisting users Areas of expertise. If a users area of expertise is endorsed once that expertise will receive a status of verified. If the user receiving assistance is not happy with the help they received they are able to dispute the assisting users areas of expertise. If a users area of expertise is disputed more than 3 times before receiving a status of verified a user will no longer be able to claim this area of expertise. Once a user has received the status of verified they will need to maintain an appropriate ratio of endorsements and disputes.
+
+### Use Case
+
+user_1: {
+areaOfExpertise: [Mechanic, canning, plumbing],
+}
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
