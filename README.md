@@ -38,7 +38,7 @@ user_3: {
     areaOfExpertise: [{field: TAX, status: VERIFIED, endorsementRatio: 0.86}],
     interests: [{field: MECHANIC, status: HELP}]
 }
-```
+
 Bill is a well established mechanic from his profession but he has decided to take on some very small carpentry projects around his home. After contacting Jill and receiving assistance, Jill will receive the tokens from Bill for the time spent. Although Bill's question did not take much time he used the last of his remaining tokens. However, this represented Jill's 3rd time helping other users in the community which has allowed her to collect enough tokens to have enough time with the complicated tax problems she would like to talk to Phil about. No longer able to ask for help from others due to lack of tokens Bill finds Phil is in need of mechanic help by which Bill gains back some tokens.
 
 
