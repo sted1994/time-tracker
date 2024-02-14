@@ -8,16 +8,17 @@ import {
   Routes,
   createBrowserRouter,
 } from "react-router-dom";
+import { CreateAccountForm } from "./components/createAccountForm";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <div>Hello world!</div>,
+      element: <div>World, Hello!!</div>,
     },
     {
       path: "create-account",
-      element: <div>World, Hello!!</div>,
+      element: <CreateAccountForm />,
     },
   ]);
 
