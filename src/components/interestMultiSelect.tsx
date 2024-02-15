@@ -1,50 +1,77 @@
 import {
   Checkbox,
+  Container,
+  FormControl,
   FormLabel,
   ListItemText,
   MenuItem,
   Select,
+  SelectChangeEvent,
 } from "@mui/material";
-import { SetStateAction, useState } from "react";
-
+import React from "react";
+const fillerSkills = [
+  "Carpentry",
+  "Cooking",
+  "Dancing",
+  "Drawing",
+  "Fishing",
+  "Gardening",
+  "Knitting",
+  "Painting",
+  "Photography",
+  "Pottery",
+  "Sewing",
+  "Singing",
+  "Woodworking",
+  "Writing",
+  "Yoga",
+  "Other",
+];
 export const InterestMultiSelect = () => {
-  const [interests, setInterests] = useState([]);
-  const fillerSkills = [
-    "Carpentry",
-    "Cooking",
-    "Dancing",
-    "Drawing",
-    "Fishing",
-    "Gardening",
-    "Knitting",
-    "Painting",
-    "Photography",
-    "Pottery",
-    "Sewing",
-    "Singing",
-    "Woodworking",
-    "Writing",
-    "Yoga",
-    "Other",
-  ];
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean,
-    value?: any
-  ) => {
-    console.log(event.target.id, checked, value);
+  const [interests, setInterests] = React.useState<string[]>([]);
+
+  const handleChange = (event: SelectChangeEvent<typeof interests>) => {
+    const {
+      target: { value },
+    } = event;
+    setInterests(typeof value === "string" ? value.split(",") : value);
   };
+
   return (
-    <FormLabel sx={{ display: "flex", flexDirection: "column" }}>
-      Skills you would like to learn
-      <Select multiple value={interests} size="small" sx={{ width: 250 }}>
-        {fillerSkills.map((name) => (
-          <MenuItem key={name} value={name}>
-            <Checkbox id={name} onChange={handleChange} />
-            <ListItemText primary={name} />
-          </MenuItem>
-        ))}
-      </Select>
-    </FormLabel>
+    <Container>
+      <FormControl sx={{ width: 300 }}>
+        <FormLabel sx={{ display: "flex", flexDirection: "column" }}>
+          Select your interests
+        </FormLabel>
+        <Select
+          size="small"
+          labelId="demo-multiple-checkbox-label"
+          id="demo-multiple-checkbox"
+          multiple
+          displayEmpty
+          value={interests}
+          onChange={handleChange}
+          renderValue={(selected) => {
+            if (selected.length === 0) {
+              return (
+                <em style={{ color: "lightGray" }}>
+                  Please select your interests
+                </em>
+              );
+            }
+
+            return selected.join(", ");
+          }}
+          sx={{ backgroundColor: "white" }}
+        >
+          {fillerSkills.map((name) => (
+            <MenuItem key={name} value={name}>
+              <Checkbox checked={interests.indexOf(name) > -1} />
+              <ListItemText primary={name} />
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </Container>
   );
 };

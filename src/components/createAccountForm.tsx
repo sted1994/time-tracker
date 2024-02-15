@@ -20,24 +20,22 @@ export const CreateAccountForm = () => {
     gap: 10,
   });
 
-  const fillerSkills = [
-    "Carpentry",
-    "Cooking",
-    "Dancing",
-    "Drawing",
-    "Fishing",
-    "Gardening",
-    "Knitting",
-    "Painting",
-    "Photography",
-    "Pottery",
-    "Sewing",
-    "Singing",
-    "Woodworking",
-    "Writing",
-    "Yoga",
-    "Other",
-  ];
+  const styles = {
+    "input-label": {
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      width: "100%",
+      color: "red",
+    },
+
+    input: {
+      "&::placeholder": {
+        textOverflow: "ellipsis !important",
+        color: "blue",
+      },
+    },
+  };
 
   return (
     <Container sx={{ backgroundColor: "#D9D9D9", borderRadius: 5 }}>
@@ -50,8 +48,18 @@ export const CreateAccountForm = () => {
               <TextField
                 size="small"
                 id="outlined-basic"
-                label="Enter Name"
+                placeholder="Enter Name"
                 variant="outlined"
+                sx={{
+                  borderRadius: 1,
+                  "& .MuiInputBase-root": {
+                    "& input": {
+                      color: "gray",
+                      fontStyle: "italic",
+                    },
+                  },
+                  backgroundColor: "white",
+                }}
               />
             </FormLabel>
             <FormLabel sx={{ display: "flex", flexDirection: "column" }}>
@@ -59,8 +67,18 @@ export const CreateAccountForm = () => {
               <TextField
                 size="small"
                 id="outlined-basic"
-                label="Enter Location"
+                placeholder="Enter Location"
                 variant="outlined"
+                sx={{
+                  borderRadius: 1,
+                  "& .MuiInputBase-root": {
+                    "& input": {
+                      color: "gray",
+                      fontStyle: "italic",
+                    },
+                  },
+                  backgroundColor: "white",
+                }}
               />
             </FormLabel>
           </InputGroup>
@@ -72,8 +90,18 @@ export const CreateAccountForm = () => {
         <FormLabel sx={{ display: "flex", flexDirection: "column" }}>
           About
           <TextField
+            sx={{
+              borderRadius: 1,
+              "& .MuiInputBase-root": {
+                "& input": {
+                  color: "gray",
+                  fontStyle: "italic",
+                },
+              },
+              backgroundColor: "white",
+            }}
             id="outlined-basic"
-            label="Enter a short bio about yourself"
+            placeholder="Enter a short bio about yourself"
             variant="outlined"
           />
         </FormLabel>
