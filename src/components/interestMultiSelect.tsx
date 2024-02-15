@@ -9,6 +9,7 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import React from "react";
+
 const fillerSkills = [
   "Carpentry",
   "Cooking",
@@ -27,6 +28,7 @@ const fillerSkills = [
   "Yoga",
   "Other",
 ];
+
 export const InterestMultiSelect = () => {
   const [interests, setInterests] = React.useState<string[]>([]);
 
