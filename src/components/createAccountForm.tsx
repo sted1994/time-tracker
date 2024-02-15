@@ -11,6 +11,7 @@ import {
   Typography,
   styled,
 } from "@mui/material";
+import { InterestMultiSelect } from "./interestMultiSelect";
 
 export const CreateAccountForm = () => {
   const InputGroup = styled("div")({
@@ -44,17 +45,19 @@ export const CreateAccountForm = () => {
       <Container component="form">
         <Container sx={{ display: "flex" }}>
           <InputGroup>
-            <FormLabel>
+            <FormLabel sx={{ display: "flex", flexDirection: "column" }}>
               Name
               <TextField
+                size="small"
                 id="outlined-basic"
                 label="Enter Name"
                 variant="outlined"
               />
             </FormLabel>
-            <FormLabel>
+            <FormLabel sx={{ display: "flex", flexDirection: "column" }}>
               Location
               <TextField
+                size="small"
                 id="outlined-basic"
                 label="Enter Location"
                 variant="outlined"
@@ -62,31 +65,11 @@ export const CreateAccountForm = () => {
             </FormLabel>
           </InputGroup>
           <InputGroup>
-            <FormLabel>
-              Skills you would like to learn
-              <Select multiple value={[""]}>
-                {fillerSkills.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    <Checkbox />
-                    <ListItemText primary={name} />
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormLabel>
-            <FormLabel>
-              Skills you would like to teach
-              <Select multiple value={[""]}>
-                {fillerSkills.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    <Checkbox />
-                    <ListItemText primary={name} />
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormLabel>
+            <InterestMultiSelect />
+            <InterestMultiSelect />
           </InputGroup>
         </Container>
-        <FormLabel>
+        <FormLabel sx={{ display: "flex", flexDirection: "column" }}>
           About
           <TextField
             id="outlined-basic"
